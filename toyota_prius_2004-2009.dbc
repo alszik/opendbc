@@ -59,9 +59,13 @@ BO_ 59 BATTERY_1: 8 XXX
  SG_ BATTERY_CURRENT : 3|12@0- (0.1,0) [-256|254] "A" XXX
 
 BO_ 971 BATTERY_2: 8 XXX
- SG_ SOC : 23|16@0+ (0.5,0) [0|65535] "%" XXX
  SG_ MAX_DISCHARGE_CURRENT : 7|8@0+ (1,0) [0|255] "A" XXX
  SG_ MAX_CHARGE_CURRENT : 15|8@0+ (1,0) [0|255] "A" XXX
+ SG_ SOC : 31|8@0+ (0.5,0) [0|255] "" XXX
+ SG_ DELTA_SOC_? : 23|8@0+ (0.5,0) [0|255] "" XXX
+ SG_ CHECKSUM : 55|8@0+ (1,0) [0|255] "" XXX
+ SG_ TEMP_1 : 39|8@0- (1,0) [0|255] "" XXX
+ SG_ TEMP_2 : 47|8@0- (1,0) [0|255] "" XXX
 
 BO_ 34 ACC_Y: 8 XXX
  SG_ ACC_Y : 7|16@0- (1,-500) [0|65535] "" XXX
@@ -84,9 +88,15 @@ BO_ 35 ACC_X: 8 XXX
  SG_ ACC_X : 7|16@0+ (1,0) [0|65535] "" XXX
 
 BO_ 57 ENGINE_TEMP: 4 XXX
- SG_ NEW_SIGNAL_1 : 16|8@1+ (1,0) [0|255] "" XXX
+ SG_ ENGINE_TEMP : 23|8@0+ (1,0) [0|255] "degC" XXX
+
+BO_ 975 NEW_MSG_2: 8 XXX
+
+BO_ 1444 GAS_GAUGE_?: 2 XXX
+ SG_ NEW_SIGNAL_1 : 7|16@0+ (1,0) [0|65535] "" XXX
 
 
 
 
 CM_ SG_ 59 BATTERY_CURRENT "positive values are discharge, negative are charge";
+CM_ SG_ 57 ENGINE_TEMP "not coolant";
